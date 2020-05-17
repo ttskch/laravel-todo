@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
     <title>Laravel Todo</title>
 </head>
 <body class="bg-light">
