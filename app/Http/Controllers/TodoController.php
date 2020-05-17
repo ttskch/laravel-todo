@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Collective\Annotations\Routing\Annotations\Annotations\Get;
-use Illuminate\Routing\Controller as BaseController;
 
-class TodoController extends BaseController
+class TodoController extends Controller
 {
     /**
      * @Get("/", as="todo_index")
