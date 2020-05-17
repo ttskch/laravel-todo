@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Collective\Annotations\Routing\Annotations\Annotations\Get;
+use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
 {
@@ -11,12 +12,10 @@ class TodoController extends Controller
      */
     public function index()
     {
+        $todos = DB::select('select * from todos');
+
         return view('todo.index', [
-            'todos' => [
-                ['name' => 'todo1', 'isDone' => false],
-                ['name' => 'todo2', 'isDone' => false],
-                ['name' => 'todo3', 'isDone' => false],
-            ],
+            'todos' => $todos,
         ]);
     }
 }
