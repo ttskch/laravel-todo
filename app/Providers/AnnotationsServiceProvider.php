@@ -32,7 +32,7 @@ class AnnotationsServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $scanWhenLocal = false;
+    protected $scanWhenLocal = true;
 
     /**
      * Determines whether or not to automatically scan the controllers
@@ -40,7 +40,7 @@ class AnnotationsServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $scanControllers = false;
+    protected $scanControllers = true;
 
     /**
      * Determines whether or not to automatically scan all namespaced
