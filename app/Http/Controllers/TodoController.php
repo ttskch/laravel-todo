@@ -11,6 +11,12 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return 'test';
+        return view('todo.index', [
+            'todos' => [
+                ['name' => 'todo1', 'isDone' => false],
+                ['name' => 'todo2', 'isDone' => false],
+                ['name' => 'todo3', 'isDone' => false],
+            ],
+        ]);
     }
 }
