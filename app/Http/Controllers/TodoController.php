@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Collective\Annotations\Routing\Annotations\Annotations\Get;
 use Collective\Annotations\Routing\Annotations\Annotations\Middleware;
+use Collective\Annotations\Routing\Annotations\Annotations\Patch;
 use Collective\Annotations\Routing\Annotations\Annotations\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -34,6 +35,17 @@ class TodoController extends Controller
         ]);
 
         DB::insert('insert into todos (name, isDone) values (?, ?)', [$validatedData['name'], 0]);
+
+        return redirect(route('todo_index'));
+    }
+
+    /**
+     * @Patch("/{id}/edit", as="todo_edit")
+     * @Middleware("web")
+     */
+    public function edit(Request $request, string $id)
+    {
+        DB::update('update todos set isDone = ? where id = ?', [(boolean) $request->get('isDone'), $id]);
 
         return redirect(route('todo_index'));
     }
