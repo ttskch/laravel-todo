@@ -3,7 +3,7 @@
 @section('content')
     <ul>
         @foreach ($todos as $todo)
-            <li>{{ $todo['name'] }}</li>
+            <li>{{ $todo['name'] }} {{ $todo['isDone'] ? 'done' : 'undone' }}</li>
         @endforeach
     </ul>
 @endsection
